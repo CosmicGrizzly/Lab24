@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<a href="../Shop/Index" class="btn-warning">Go To Item List</a>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in ViewBag.ItemList)
+    {
+        <tr>
+            <td>@item.Title</td>
+            <td>@item.Genre</td>
+            <td>@item.ReleaseYear</td>
+            <td><a href="../Item/UpdateItem?itemID=@item.ID class=" btn-default">Update Item" </a></td>
+            <td><a href="../Item/deleteItem?itemID=@item.ID class=" btn-delete">delete Item" </a></td>
+        </tr>     
+  </table>
+    }
+}
+
